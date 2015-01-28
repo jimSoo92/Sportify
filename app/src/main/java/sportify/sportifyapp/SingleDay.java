@@ -6,37 +6,23 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
 
-public class MainPage extends ActionBarActivity {
+public class SingleDay extends ActionBarActivity {
 
-    private Button mainSche;
-    private Button mainDay;
+    private ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.activity_single_day);
 
-        mainSche = (Button) findViewById(R.id.mainSche);
-        mainDay = (Button) findViewById(R.id.mainDay);
-
-        mainSche.setOnClickListener(new View.OnClickListener() {
+        back = (ImageButton) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), SportifyMain.class);
-                startActivity(i);
-            }
-        });
-
-        mainDay.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Toast toast = Toast.makeText(getApplicationContext(), "This opens day-by-day schedule", Toast.LENGTH_SHORT);
-                Intent i = new Intent(getApplicationContext(), SingleDay.class);
-                toast.show();
+                Intent i = new Intent(getApplicationContext(), MainPage.class);
                 startActivity(i);
             }
         });
@@ -46,7 +32,7 @@ public class MainPage extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main_page, menu);
+        getMenuInflater().inflate(R.menu.menu_single_day, menu);
         return true;
     }
 

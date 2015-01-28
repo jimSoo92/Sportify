@@ -20,6 +20,10 @@
             android:name=".SportifyMain"
             android:label="@string/title_activity_main_page" >
         </activity>
+        <activity
+            android:name=".SingleDay"
+            android:label="@string/title_activity_single_day" >
+        </activity>
     </application>
 
 </manifest>
