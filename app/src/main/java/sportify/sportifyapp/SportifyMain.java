@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 
 public class SportifyMain extends ActionBarActivity {
@@ -19,7 +20,7 @@ public class SportifyMain extends ActionBarActivity {
     private Button friday;
     private Button saturday;
     private Button sunday;
-    private ImageButton backButton;
+    private ImageView backButton;
     private ImageButton editSche;
     private ImageButton newSche;
 
@@ -28,7 +29,7 @@ public class SportifyMain extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sportify_main);
 
-        backButton = (ImageButton) findViewById(R.id.backButton);
+        backButton = (ImageView) findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +38,6 @@ public class SportifyMain extends ActionBarActivity {
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,4 +60,12 @@ public class SportifyMain extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void addClicked(View v){
+
+        NewScheduleFragment nw = new NewScheduleFragment();
+        nw.show(getFragmentManager(),"");
+    }
+
+
 }
