@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-
 public class NewScheduleFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = new Dialog(getActivity());
@@ -46,6 +45,7 @@ public class NewScheduleFragment extends DialogFragment {
         adapter1.add("One");
         adapter1.add("Two");
         adapter1.add("Three");
+        adapter1.add("Four");
         Spinner spinner1 = (Spinner) dialog.findViewById(R.id.One_spinner);
         spinner1.setAdapter(adapter1);
 
@@ -61,7 +61,7 @@ public class NewScheduleFragment extends DialogFragment {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
+
         return dialog;
     }
-
 }

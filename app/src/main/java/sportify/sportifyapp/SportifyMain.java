@@ -61,11 +61,13 @@ public class SportifyMain extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void addClicked(View v){
-
+    public void addClicked(View view){
         NewScheduleFragment nw = new NewScheduleFragment();
         nw.show(getFragmentManager(),"");
     }
 
-
+    public void addClick(View view) {
+        EditScheduleFragment wn = new EditScheduleFragment();
+        wn.show(getFragmentManager(),"");
+    }
 }

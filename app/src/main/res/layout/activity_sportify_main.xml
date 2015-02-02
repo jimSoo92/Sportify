@@ -18,6 +18,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/editSche"
+        android:onClick="addClick"
         android:src="@drawable/application_icon"
         android:scaleType="fitXY"
         android:layout_alignParentTop="true"
