@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 
 public class MainPage extends ActionBarActivity {
@@ -34,9 +33,7 @@ public class MainPage extends ActionBarActivity {
         mainDay.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getApplicationContext(), "This opens day-by-day schedule", Toast.LENGTH_SHORT);
-                Intent i = new Intent(getApplicationContext(), SingleDay.class);
-                toast.show();
+                Intent i = new Intent(getApplicationContext(), SportifyMain.class);
                 startActivity(i);
             }
         });
