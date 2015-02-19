@@ -18,7 +18,7 @@
     <ImageButton
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/editActivity"
+        android:id="@+id/editSche"
         android:src="@drawable/application_icon"
         android:scaleType="fitXY"
         android:layout_alignTop="@+id/backButton"
@@ -30,8 +30,8 @@
         android:id="@+id/addActivity"
         android:src="@drawable/add_icon"
         android:scaleType="fitXY"
-        android:layout_alignTop="@+id/editActivity"
-        android:layout_toStartOf="@+id/editActivity" />
+        android:layout_alignTop="@+id/editSche"
+        android:layout_toStartOf="@+id/editSche" />
 
     <TableLayout
         android:layout_width="match_parent"

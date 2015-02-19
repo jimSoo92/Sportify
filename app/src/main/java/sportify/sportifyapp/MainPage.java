@@ -11,29 +11,31 @@ import android.widget.Button;
 
 public class MainPage extends ActionBarActivity {
 
-    private Button mainSche;
-    private Button mainDay;
+    private Button mainSched;
+    private Button mainDbd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        mainSche = (Button) findViewById(R.id.mainSche);
-        mainDay = (Button) findViewById(R.id.mainDay);
+        mainSched = (Button) findViewById(R.id.mainSche);
+        mainDbd = (Button) findViewById(R.id.mainDay);
 
-        mainSche.setOnClickListener(new View.OnClickListener() {
+
+        mainDbd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), SportifyMain.class);
-                startActivity(i);
+                Intent j = new Intent(getApplicationContext(), DayByDay.class);
+                startActivity(j);
             }
         });
 
-        mainDay.setOnClickListener(new View.OnClickListener(){
+
+        mainSched.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), DayByDay.class);
+                Intent i = new Intent(getApplicationContext(), SportifyMain.class);
                 startActivity(i);
             }
         });

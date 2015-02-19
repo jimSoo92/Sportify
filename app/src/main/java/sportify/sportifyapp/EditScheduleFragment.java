@@ -18,22 +18,18 @@ public class EditScheduleFragment extends DialogFragment {
         dialog.setContentView(R.layout.fragment_edit_schedule);
 
         // Number of weeks
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        adapter.add("One");
-        adapter.add("Two");
-        adapter.add("Three");
-        adapter.add("Four");
-        Spinner spinner1 = (Spinner) dialog.findViewById(R.id.One_spinner);
-        spinner1.setAdapter(adapter);
+        Spinner weeksSelect = (Spinner) dialog.findViewById(R.id.One_spinner);
+        ArrayAdapter<CharSequence> setWeeks = ArrayAdapter.createFromResource(getActivity(), R.array.number_weeks, android.R.layout.simple_spinner_item);
+        setWeeks.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        weeksSelect.setAdapter(setWeeks);
 
-        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        weeksSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 Spinner spinner = (Spinner) parent;
                 String item = (String) spinner.getSelectedItem();
-                Toast.makeText(getActivity(), item, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), item, Toast.LENGTH_SHORT).show();
             }
 
             @Override

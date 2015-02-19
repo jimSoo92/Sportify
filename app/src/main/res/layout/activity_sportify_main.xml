@@ -17,7 +17,7 @@
     <ImageButton
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/editActivity"
+        android:id="@+id/editSche"
         android:onClick="addClick"
         android:src="@drawable/application_icon"
         android:scaleType="fitXY"
@@ -31,8 +31,8 @@
         android:onClick="addClicked"
         android:src="@drawable/add_icon"
         android:scaleType="fitXY"
-        android:layout_alignTop="@+id/editActivity"
-        android:layout_toStartOf="@+id/editActivity" />
+        android:layout_alignTop="@+id/editSche"
+        android:layout_toStartOf="@+id/editSche" />
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -174,5 +174,14 @@
                 android:text="(Insert Text)" />
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule Name"
+        android:id="@+id/scheID"
+        android:layout_below="@+id/newSche"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp" />
 
 </RelativeLayout>

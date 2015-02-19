@@ -35,7 +35,6 @@ public class DayOfWeek extends ActionBarActivity {
             }
         });
         day = (TextView) findViewById(R.id.day);
-
     }
 
 
@@ -57,7 +56,6 @@ public class DayOfWeek extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
