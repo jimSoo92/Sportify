@@ -8,6 +8,16 @@
     <string name="title_activity_single_day">SingleDay</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string-array name="day_of_the_week">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
     <string-array name="number_weeks">
         <item>1</item>
         <item>2</item>

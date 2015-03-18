@@ -15,6 +15,8 @@ public class NewScheduleFragment extends DialogFragment {
 
     Button confirm;
     Button cancel;
+    Spinner dayItemSpinner;
+    String dayItemSelect;
     String weekItemSelect;
     String scheItemSelect;
     Spinner scheItemSpinner;
@@ -25,6 +27,12 @@ public class NewScheduleFragment extends DialogFragment {
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.fragment_new_schedule);
+
+        // Day of the week
+        Spinner daySelect = (Spinner) dialog.findViewById(R.id.Day_of_the_week_spinner);
+        ArrayAdapter<CharSequence> daySche = ArrayAdapter.createFromResource(getActivity(), R.array.day_of_the_week, android.R.layout.simple_spinner_item);
+        daySche.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        daySelect.setAdapter(daySche);
 
         // preset schedule
         Spinner scheSelect = (Spinner) dialog.findViewById(R.id.Preset_Schedule_spinner);
@@ -41,6 +49,18 @@ public class NewScheduleFragment extends DialogFragment {
         // Confirm button
         Button confirm = (Button) dialog.findViewById(R.id.confirmButton);
 
+
+        daySelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                dayItemSpinner = (Spinner) parent;
+                dayItemSelect = (String) dayItemSpinner.getSelectedItem();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
 
         scheSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -70,7 +90,7 @@ public class NewScheduleFragment extends DialogFragment {
         confirm.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(), "Workout: " + scheItemSelect + ", " + "Weeks: "
+                Toast.makeText(getActivity(), "Days: " + dayItemSelect + "," + "Workout: " + scheItemSelect + ", " + "Weeks: "
                                    + weekItemSelect, Toast.LENGTH_SHORT).show();
             }
         });
