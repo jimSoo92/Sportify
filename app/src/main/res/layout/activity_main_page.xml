@@ -11,25 +11,32 @@
         android:layout_height="200dp"
         android:text="Schedule"
         android:id="@+id/mainSche"
+        android:background="#fa42349b"
+        android:textColor="#ffffffff"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="20dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:text="Day-by-Day"
         android:id="@+id/mainDay"
+        android:background="#fa42349b"
+        android:textColor="#ffffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/mainSche" />
+        android:layout_alignEnd="@+id/mainSche"
+        android:textSize="20dp" />
 
     <ImageButton
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/logo"
         android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/textView" />
+        android:layout_toStartOf="@+id/textView"
+        android:background="@drawable/dumbbell" />
 
     <TextView
         android:layout_width="wrap_content"

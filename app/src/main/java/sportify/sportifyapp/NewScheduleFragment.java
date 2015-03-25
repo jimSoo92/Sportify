@@ -8,10 +8,13 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class NewScheduleFragment extends DialogFragment {
+
+    private DataSource dataSource;
 
     Button confirm;
     Button cancel;
@@ -22,11 +25,14 @@ public class NewScheduleFragment extends DialogFragment {
     Spinner scheItemSpinner;
     Spinner weekItemSpinner;
 
+    EditText editText;
+
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = new Dialog(getActivity());
-
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.fragment_new_schedule);
+
+        editText = (EditText)dialog.findViewById(R.id.scheduleName);
 
         // Day of the week
         Spinner daySelect = (Spinner) dialog.findViewById(R.id.Day_of_the_week_spinner);
@@ -34,7 +40,7 @@ public class NewScheduleFragment extends DialogFragment {
         daySche.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         daySelect.setAdapter(daySche);
 
-        // preset schedule
+        // Preset schedule
         Spinner scheSelect = (Spinner) dialog.findViewById(R.id.Preset_Schedule_spinner);
         ArrayAdapter<CharSequence> presetSche = ArrayAdapter.createFromResource(getActivity(), R.array.preset_sche, android.R.layout.simple_spinner_item);
         presetSche.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -90,10 +96,16 @@ public class NewScheduleFragment extends DialogFragment {
         confirm.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(), "Days: " + dayItemSelect + "," + "Workout: " + scheItemSelect + ", " + "Weeks: "
-                                   + weekItemSelect, Toast.LENGTH_SHORT).show();
+                /* Toast.makeText(getActivity(), "Days: " + dayItemSelect + "," + "Workout: " + scheItemSelect + ", " + "Weeks: "
+                                  + weekItemSelect, Toast.LENGTH_SHORT).show(); */
+                dataSource = new DataSource(getActivity());
+                dataSource.open();
+                WorkoutSchedule newWork= dataSource.createWorkoutSchedule(editText.getText().toString(),dayItemSelect, scheItemSelect,Integer.parseInt(weekItemSelect) );
+                dataSource.close();
+                Toast.makeText(getActivity(), newWork.getName_schedule(),Toast.LENGTH_SHORT).show();
             }
         });
         return dialog;
     }
+
 }
