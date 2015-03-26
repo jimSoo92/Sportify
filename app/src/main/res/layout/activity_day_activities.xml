@@ -22,7 +22,8 @@
         android:src="@drawable/application_icon"
         android:scaleType="fitXY"
         android:layout_alignTop="@+id/backButton"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="addActivity" />
 
     <ImageButton
         android:layout_width="60dp"
@@ -31,7 +32,8 @@
         android:src="@drawable/add_icon"
         android:scaleType="fitXY"
         android:layout_alignTop="@+id/editAct"
-        android:layout_toStartOf="@+id/editAct" />
+        android:layout_toStartOf="@+id/editAct"
+        android:onClick="addActivity" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,7 +93,8 @@
                 android:layout_column="5"
                 android:textSize="40dp"
                 android:checked="true"
-                android:layout_weight="0.1" />
+                android:layout_weight="0.1"
+                android:clickable="false" />
         </TableRow>
 
         <TableRow
@@ -115,7 +118,8 @@
                 android:id="@+id/setsCheck"
                 android:layout_column="1"
                 android:enabled="true"
-                android:layout_weight="0.15" />
+                android:layout_weight="0.15"
+                android:gravity="center" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -123,7 +127,8 @@
                 android:text="30"
                 android:id="@+id/repsCheck"
                 android:layout_column="2"
-                android:layout_weight="0.15" />
+                android:layout_weight="0.15"
+                android:gravity="center" />
 
             <CheckBox
                 android:layout_width="wrap_content"

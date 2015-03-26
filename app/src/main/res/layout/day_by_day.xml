@@ -30,7 +30,8 @@
                 android:layout_height="50dp"
                 android:text="Monday"
                 android:id="@+id/monday"
-                android:layout_column="0" />
+                android:layout_column="0"
+                android:nestedScrollingEnabled="true" />
 
             <EditText
                 android:layout_width="200dp"

@@ -18,11 +18,12 @@
     <ImageButton
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/editSche"
+        android:id="@+id/editActivity"
         android:src="@drawable/application_icon"
         android:scaleType="fitXY"
         android:layout_alignTop="@+id/backButton"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="editActivity" />
 
     <ImageButton
         android:layout_width="60dp"
@@ -30,8 +31,9 @@
         android:id="@+id/addActivity"
         android:src="@drawable/add_icon"
         android:scaleType="fitXY"
-        android:layout_alignTop="@+id/editSche"
-        android:layout_toStartOf="@+id/editSche" />
+        android:layout_alignTop="@+id/editActivity"
+        android:layout_toStartOf="@+id/editActivity"
+        android:onClick="addActivity" />
 
     <TableLayout
         android:layout_width="match_parent"

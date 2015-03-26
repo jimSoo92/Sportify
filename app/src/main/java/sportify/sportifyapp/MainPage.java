@@ -14,6 +14,7 @@ public class MainPage extends ActionBarActivity {
     private Button mainSched;
     private Button mainDbd;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +22,6 @@ public class MainPage extends ActionBarActivity {
 
         mainSched = (Button) findViewById(R.id.mainSche);
         mainDbd = (Button) findViewById(R.id.mainDay);
-
 
         mainDbd.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -63,4 +63,5 @@ public class MainPage extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

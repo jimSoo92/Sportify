@@ -31,6 +31,7 @@ public class NewScheduleFragment extends DialogFragment {
         Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.fragment_new_schedule);
+        dialog.setCanceledOnTouchOutside(false);
 
         editText = (EditText)dialog.findViewById(R.id.scheduleName);
 
@@ -53,7 +54,10 @@ public class NewScheduleFragment extends DialogFragment {
         weeksSelect.setAdapter(setWeeks);
 
         // Confirm button
-        Button confirm = (Button) dialog.findViewById(R.id.confirmButton);
+        confirm = (Button) dialog.findViewById(R.id.confirmButton);
+
+        //Cancel button
+        cancel = (Button) dialog.findViewById(R.id.cancelButton);
 
 
         daySelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -103,9 +107,19 @@ public class NewScheduleFragment extends DialogFragment {
                 WorkoutSchedule newWork= dataSource.createWorkoutSchedule(editText.getText().toString(),dayItemSelect, scheItemSelect,Integer.parseInt(weekItemSelect) );
                 dataSource.close();
                 Toast.makeText(getActivity(), newWork.getName_schedule(),Toast.LENGTH_SHORT).show();
+                dismiss();
             }
         });
+
+        cancel.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                dismiss();
+            }
+        });
+
         return dialog;
     }
+
+
 
 }

@@ -21,10 +21,14 @@ public class DayByDay extends ActionBarActivity {
     private Button sunday;
     private ImageView backButton;
 
+    private View mDecorView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_day_by_day);
+        setContentView(R.layout.day_by_day);
+
+        mDecorView = getWindow().getDecorView();
 
         backButton = (ImageView) findViewById(R.id.backButton);
 
@@ -35,6 +39,64 @@ public class DayByDay extends ActionBarActivity {
                 startActivity(i);
             }
         });
+
+        saturday = (Button) findViewById(R.id.saturday);
+        saturday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent dayI = new Intent(getApplicationContext(), DayActivities.class);
+                startActivity(dayI);
+            }
+        });
+        sunday = (Button) findViewById(R.id.sunday);
+        sunday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent dayI = new Intent(getApplicationContext(), DayActivities.class);
+                startActivity(dayI);
+            }
+        });
+        monday = (Button) findViewById(R.id.monday);
+        monday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent dayI = new Intent(getApplicationContext(), DayActivities.class);
+                startActivity(dayI);
+            }
+        });
+        tuesday = (Button) findViewById(R.id.tuesday);
+        tuesday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent dayI = new Intent(getApplicationContext(), DayActivities.class);
+                startActivity(dayI);
+            }
+        });
+        wednesday = (Button) findViewById(R.id.wednesday);
+        wednesday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent dayI = new Intent(getApplicationContext(), DayActivities.class);
+                startActivity(dayI);
+            }
+        });
+        thursday = (Button) findViewById(R.id.thursday);
+        thursday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent dayI = new Intent(getApplicationContext(), DayActivities.class);
+                startActivity(dayI);
+            }
+        });
+        friday = (Button) findViewById(R.id.friday);
+        friday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent dayI = new Intent(getApplicationContext(), DayActivities.class);
+                startActivity(dayI);
+            }
+        });
+
     }
 
     @Override
@@ -57,5 +119,20 @@ public class DayByDay extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 }

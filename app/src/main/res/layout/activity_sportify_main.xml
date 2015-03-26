@@ -17,7 +17,7 @@
     <ImageButton
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/editSche"
+        android:id="@+id/editActivity"
         android:onClick="addClick"
         android:src="@drawable/application_icon"
         android:scaleType="fitXY"
@@ -31,8 +31,8 @@
         android:onClick="addClicked"
         android:src="@drawable/add_icon"
         android:scaleType="fitXY"
-        android:layout_alignTop="@+id/editSche"
-        android:layout_toStartOf="@+id/editSche" />
+        android:layout_alignTop="@+id/editActivity"
+        android:layout_toStartOf="@+id/editActivity" />
 
     <TableLayout
         android:layout_width="fill_parent"

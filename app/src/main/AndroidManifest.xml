@@ -28,6 +28,16 @@
             android:label="DayByDay"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name=".DayOfWeek"
+            android:label="DayOfWeek"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".DayActivities"
+            android:label="DayActivities"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

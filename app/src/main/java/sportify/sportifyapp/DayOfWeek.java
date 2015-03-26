@@ -20,11 +20,15 @@ public class DayOfWeek extends ActionBarActivity {
     private ImageButton addAct;
     private TextView day; //Changes based on the day of the week. Refs database.
 
+    private View mDecorView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.activity_day_activities);
+
+        mDecorView = getWindow().getDecorView();
 
         backButton = (ImageView) findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -57,5 +61,28 @@ public class DayOfWeek extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void addActivity(View view){
+        NewActivityFragment naf = new NewActivityFragment();
+        naf.show(getFragmentManager(),"");
+    }
+
+    public void editActivity(View view){
+        EditActivityFragment eaf = new EditActivityFragment();
+        eaf.show(getFragmentManager(), "");
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 }
