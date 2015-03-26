@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SportifyApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_page">MainPage</string>
+    <string name="title_activity_single_day">SingleDay</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="numSets"># of Sets</string>
+    <string name="numSetsShort"># Sets</string>
+    <string name="numReps"># of Repetitions</string>
+    <string name="numRepsShort"># Reps</string>
+    <string name="actName">Activity</string>
+    <string name="done">Done</string>
+
+    <string-array name="day_of_the_week">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <string-array name="number_weeks">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="preset_sche">
+        <item>"Cardio"</item>
+        <item>"Upper body"</item>
+        <item>"Lower body"</item>
+    </string-array>
+
+</resources>
