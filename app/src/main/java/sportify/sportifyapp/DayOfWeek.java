@@ -24,11 +24,7 @@ public class DayOfWeek extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
-        setContentView(R.layout.activity_day_activities);
-=======
         setContentView(R.layout.activity_main_page);
->>>>>>> 2a6dd5d3ef78c0fafe8a6d22435122abadb94094
 
         backButton = (ImageView) findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {

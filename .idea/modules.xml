@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Sportify.iml" filepath="$PROJECT_DIR$/Sportify.iml" />
-<<<<<<< HEAD
-=======
-      <module fileurl="file://$PROJECT_DIR$/SportifyApp.iml" filepath="$PROJECT_DIR$/SportifyApp.iml" />
->>>>>>> 2a6dd5d3ef78c0fafe8a6d22435122abadb94094
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
