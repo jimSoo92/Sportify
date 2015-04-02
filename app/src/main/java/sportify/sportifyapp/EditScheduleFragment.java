@@ -6,26 +6,46 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.view.Window;
+
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class EditScheduleFragment extends DialogFragment {
-
     Button confirm;
     Button cancel;
     Button delete;
-    Dialog dialog;
+
     EditText editText;
 
+    private DataSource dataSource;
+
+    Spinner dayItemSpinner;
+    String dayItemSelect;
+    String weekItemSelect;
+    String scheItemSelect;
+    Spinner scheItemSpinner;
+    Spinner weekItemSpinner;
+
+
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        dialog = new Dialog(getActivity());
+        Dialog dialog = new Dialog(getActivity());
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.fragment_edit_schedule);
+        dialog.setCanceledOnTouchOutside(false);
+
+        editText = (EditText)dialog.findViewById(R.id.scheduleName);
+
+        // Confirm button
+        confirm = (Button) dialog.findViewById(R.id.confirmButton);
+
+        //Cancel button
+        cancel = (Button) dialog.findViewById(R.id.cancelButton);
 
         dialog.setCanceledOnTouchOutside(false);
 
@@ -44,6 +64,7 @@ public class EditScheduleFragment extends DialogFragment {
         //Cancel button
         cancel = (Button) dialog.findViewById(R.id.cancelButton);
 
+
         //Delete button
         delete = (Button) dialog.findViewById(R.id.deleteSche);
 
@@ -56,6 +77,7 @@ public class EditScheduleFragment extends DialogFragment {
         cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 dismiss();
+
             }
         });
 
@@ -87,10 +109,13 @@ public class EditScheduleFragment extends DialogFragment {
                 Spinner spinner = (Spinner) parent;
                 String item = (String) spinner.getSelectedItem();
                 Toast.makeText(getActivity(), item, Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                dismiss();
             }
         });
 
@@ -122,4 +147,5 @@ public class EditScheduleFragment extends DialogFragment {
 
         return dialog;
     }
+
 }
