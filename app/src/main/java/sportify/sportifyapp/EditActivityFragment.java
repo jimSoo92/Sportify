@@ -8,9 +8,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
-/**
- * Created by Derinsleif on 3/25/2015.
-        */
 public class EditActivityFragment extends DialogFragment{
 
     private DataSource dataSource;
@@ -22,14 +19,23 @@ public class EditActivityFragment extends DialogFragment{
     int setNum;
     int repNum;
     String day;
+    EditText editText;
 
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.fragment_edit_activity);
+        dialog.setContentView(R.layout.fragment_edit_activity1);
         dialog.setCanceledOnTouchOutside(false);
 
         activityName = (EditText) dialog.findViewById(R.id.activityName);
+
+        activityName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activityName.setText("");
+            }
+
+        });
 
         // Confirm button
         confirm = (Button) dialog.findViewById(R.id.confirmButton);

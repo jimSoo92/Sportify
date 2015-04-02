@@ -53,4 +53,10 @@ public class WorkoutSchedule {
     public String getDay_of_the_week() {
         return day_of_the_week;
     }
+
+    public String toString() {
+        return name_schedule + "\n" + day_of_the_week + "\n " + preset_schedule + "\n " + num_of_weeks + "\n";
+    }
 }
+
+

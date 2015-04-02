@@ -10,9 +10,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Derinsleif on 3/25/2015.
- */
 public class DayActivities extends ActionBarActivity{
 
     private ImageView backButton;
@@ -37,9 +34,9 @@ public class DayActivities extends ActionBarActivity{
                 startActivity(i);
             }
         });
+
         day = (TextView) findViewById(R.id.day);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

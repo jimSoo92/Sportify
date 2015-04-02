@@ -11,19 +11,18 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/backButton"
-        android:src="@drawable/left_arrow"
+        android:src="@drawable/backbutton"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
     <ImageButton
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/editActivity"
-        android:src="@drawable/application_icon"
+        android:id="@+id/editSche"
+        android:src="@drawable/backbutton"
         android:scaleType="fitXY"
         android:layout_alignTop="@+id/backButton"
-        android:layout_alignParentEnd="true"
-        android:onClick="editActivity" />
+        android:layout_alignParentEnd="true" />
 
     <ImageButton
         android:layout_width="60dp"
@@ -31,16 +30,14 @@
         android:id="@+id/addActivity"
         android:src="@drawable/add_icon"
         android:scaleType="fitXY"
-        android:layout_alignTop="@+id/editActivity"
-        android:layout_toStartOf="@+id/editActivity"
-        android:onClick="addActivity" />
+        android:layout_alignTop="@+id/editSche"
+        android:layout_toStartOf="@+id/editSche" />
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/backButton"
-        android:layout_alignStart="@+id/backButton"
-        android:layout_marginTop="50dp">
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/backButton">
 
         <TableRow
             android:layout_width="fill_parent"

@@ -41,7 +41,6 @@ public class MainPage extends ActionBarActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -57,7 +56,10 @@ public class MainPage extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.backupbutton) {
+            Intent intent = new Intent(this, ActivityList.class);
+            startActivity(intent);
+
             return true;
         }
 

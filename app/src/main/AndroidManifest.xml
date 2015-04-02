@@ -6,38 +6,48 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
 
         <activity
             android:name=".MainPage"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SportifyMain"
             android:label="@string/title_activity_main_page"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
+
         <activity
             android:name=".DayByDay"
             android:label="DayByDay"
             android:screenOrientation="portrait" >
         </activity>
+
         <activity
             android:name=".DayOfWeek"
             android:label="DayOfWeek"
             android:screenOrientation="portrait" >
         </activity>
+
         <activity
             android:name=".DayActivities"
             android:label="DayActivities"
             android:screenOrientation="portrait" >
         </activity>
+
+        <activity
+            android:name=".ActivityList"
+            android:label="@string/title_activity_list" >
+        </activity>
+
     </application>
 
 </manifest>

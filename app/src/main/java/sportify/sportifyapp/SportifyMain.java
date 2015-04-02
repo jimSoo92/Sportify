@@ -8,9 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.FileOutputStream;
+import java.util.List;
 
 
 public class SportifyMain extends ActionBarActivity {
@@ -23,6 +26,12 @@ public class SportifyMain extends ActionBarActivity {
     private Button saturday;
     private Button sunday;
     private ImageView backButton;
+    private ImageButton editSche;
+    private ImageButton newSche;
+
+    static String name_schedule;
+    static TextView textView;
+    static int id;
 
     private View mDecorView;
 
@@ -36,6 +45,7 @@ public class SportifyMain extends ActionBarActivity {
         FileOutputStream outputStream;
 
         mDecorView = getWindow().getDecorView();
+        textView = (TextView)findViewById(R.id.scheID);
 
         try {
             outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
@@ -62,6 +72,7 @@ public class SportifyMain extends ActionBarActivity {
                 startActivity(dayI);
             }
         });
+
         sunday = (Button) findViewById(R.id.sunday);
         sunday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +81,7 @@ public class SportifyMain extends ActionBarActivity {
                 startActivity(dayI);
             }
         });
+
         monday = (Button) findViewById(R.id.monday);
         monday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +90,7 @@ public class SportifyMain extends ActionBarActivity {
                 startActivity(dayI);
             }
         });
+
         tuesday = (Button) findViewById(R.id.tuesday);
         tuesday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +99,7 @@ public class SportifyMain extends ActionBarActivity {
                 startActivity(dayI);
             }
         });
+
         wednesday = (Button) findViewById(R.id.wednesday);
         wednesday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +108,7 @@ public class SportifyMain extends ActionBarActivity {
                 startActivity(dayI);
             }
         });
+
         thursday = (Button) findViewById(R.id.thursday);
         thursday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +117,7 @@ public class SportifyMain extends ActionBarActivity {
                 startActivity(dayI);
             }
         });
+
         friday = (Button) findViewById(R.id.friday);
         friday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,8 +126,17 @@ public class SportifyMain extends ActionBarActivity {
                 startActivity(dayI);
             }
         });
-    }
 
+        DataSource dataSource = new DataSource(this);
+        dataSource.open();
+        List<WorkoutSchedule> myList =  dataSource.getAllWorkoutSchedulesForThisWeek();
+        WorkoutSchedule sched = myList.get(0);
+        if (sched != null) {
+            id = sched.getId();
+            name_schedule = sched.getName_schedule();
+            update_name();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -121,7 +146,7 @@ public class SportifyMain extends ActionBarActivity {
     }
 
     @Override
-         public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -156,5 +181,9 @@ public class SportifyMain extends ActionBarActivity {
                     | View.SYSTEM_UI_FLAG_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
+    }
+
+    static void update_name() {
+        textView.setText(name_schedule);
     }
 }

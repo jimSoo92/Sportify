@@ -35,7 +35,14 @@ public class NewScheduleFragment extends DialogFragment {
 
         editText = (EditText)dialog.findViewById(R.id.scheduleName);
 
-        // Day of the week
+        editText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText("");
+            }
+
+        });
+      /*  // Day of the week
         Spinner daySelect = (Spinner) dialog.findViewById(R.id.Day_of_the_week_spinner);
         ArrayAdapter<CharSequence> daySche = ArrayAdapter.createFromResource(getActivity(), R.array.day_of_the_week, android.R.layout.simple_spinner_item);
         daySche.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -45,7 +52,7 @@ public class NewScheduleFragment extends DialogFragment {
         Spinner scheSelect = (Spinner) dialog.findViewById(R.id.Preset_Schedule_spinner);
         ArrayAdapter<CharSequence> presetSche = ArrayAdapter.createFromResource(getActivity(), R.array.preset_sche, android.R.layout.simple_spinner_item);
         presetSche.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        scheSelect.setAdapter(presetSche);
+        scheSelect.setAdapter(presetSche); */
 
         // Number of weeks
         Spinner weeksSelect = (Spinner) dialog.findViewById(R.id.One_spinner);
@@ -54,13 +61,12 @@ public class NewScheduleFragment extends DialogFragment {
         weeksSelect.setAdapter(setWeeks);
 
         // Confirm button
-        confirm = (Button) dialog.findViewById(R.id.confirmButton);
+        Button confirm = (Button) dialog.findViewById(R.id.confirmButton);
 
         //Cancel button
         cancel = (Button) dialog.findViewById(R.id.cancelButton);
 
-
-        daySelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*daySelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
@@ -82,8 +88,7 @@ public class NewScheduleFragment extends DialogFragment {
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
             }
-        });
-
+        }); */
 
         weeksSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -104,9 +109,12 @@ public class NewScheduleFragment extends DialogFragment {
                                   + weekItemSelect, Toast.LENGTH_SHORT).show(); */
                 dataSource = new DataSource(getActivity());
                 dataSource.open();
-                WorkoutSchedule newWork= dataSource.createWorkoutSchedule(editText.getText().toString(),dayItemSelect, scheItemSelect,Integer.parseInt(weekItemSelect) );
+                WorkoutSchedule newWork= dataSource.createWorkoutSchedule(editText.getText().toString(),"", "",Integer.parseInt(weekItemSelect) );
                 dataSource.close();
                 Toast.makeText(getActivity(), newWork.getName_schedule(),Toast.LENGTH_SHORT).show();
+
+                SportifyMain.name_schedule = editText.getText().toString();
+                SportifyMain.update_name();
                 dismiss();
             }
         });
@@ -119,7 +127,4 @@ public class NewScheduleFragment extends DialogFragment {
 
         return dialog;
     }
-
-
-
 }

@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:ems="10"
+            android:ems="5"
             android:id="@+id/setInt" />
 
     </LinearLayout>
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:ems="10"
+            android:ems="5"
             android:id="@+id/repInt" />
 
     </LinearLayout>
